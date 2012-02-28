@@ -5,10 +5,10 @@ module FormtasticBootstrap
 
         include Formtastic::Inputs::Base::Wrapping
 
-        def generic_input_wrapping(&block)
+        def generic_input_wrapping(inline_or_block_errors = :inline, inline_or_block_hints = :inline, &block)
           control_group_div_wrapping do
             label_html <<
-            input_div_wrapping do
+            input_div_wrapping(inline_or_block_errors, inline_or_block_hints) do
               yield
             end
           end
