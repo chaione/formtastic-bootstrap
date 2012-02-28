@@ -12,8 +12,9 @@ module FormtasticBootstrap
             else
               options[:hint_class] || builder.default_block_hint_class
             end
+            hint_tag = inline_or_block == :inline ? :span : :p
             template.content_tag(
-              :span, 
+              hint_tag, 
               Formtastic::Util.html_safe(hint_text), 
               :class => hint_class
             )

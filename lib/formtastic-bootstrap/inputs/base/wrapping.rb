@@ -20,9 +20,9 @@ module FormtasticBootstrap
           end
         end
 
-        def input_div_wrapping(inline_or_block_errors = :inline)
+        def input_div_wrapping(inline_or_block_errors = :inline, inline_or_block_hints = :inline)
           template.content_tag(:div, :class => "controls") do
-            [yield, error_html(inline_or_block_errors), hint_html(inline_or_block_errors)].join("\n").html_safe
+            [yield, error_html(inline_or_block_errors), hint_html(inline_or_block_hints)].join("\n").html_safe
           end
         end
 
